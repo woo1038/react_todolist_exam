@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import TodoSection from "./componenet/TodoSection";
+import TodoHeader from "./componenet/TodoHeader";
+import TodoList from "./componenet/TodoList";
+import TodoInput from "./componenet/TodoInput";
+import { TodoProvider } from "./TodoContext";
+import TodoInput2 from "./componenet/TodoInput(reduce)";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TodoProvider>
+      <TodoSection>
+        <TodoHeader />
+        <TodoList />
+        <TodoInput />
+      </TodoSection>
+    </TodoProvider>
   );
 }
 
